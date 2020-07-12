@@ -3,7 +3,7 @@
 SCRIPT=$(readlink -f "$0")
 bin_dir=$(dirname "$SCRIPT")
 root_dir=${bin_dir}/..
-domains_dir=/opt/glassfish4/glassfish/domains
+domains_dir=/opt/glassfish5/glassfish/domains
 
 export bin_dir root_dir domains_dir
 
@@ -22,6 +22,6 @@ if [ "$(ls -A ${deploy_dir})" ]; then
 fi
 
 echo "=> Starting and running Glassfish server"
-DEBUG_MODE=${DEBUG:-false}
+DEBUG_MODE=${DEBUG:-true}
 echo "=> Debug mode is set to: ${DEBUG_MODE}"
-exec asadmin start-domain --debug=${DEBUG_MODE} --watchdog
+exec asadmin start-domain --debug=${DEBUG_MODE} --watchdog --verbose
