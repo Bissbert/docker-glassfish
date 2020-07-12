@@ -1,7 +1,7 @@
 docker-glassfish
 ================
 
-Docker image to run a Glassfish 4.1 application server.
+Docker image to run a Glassfish 5.0.1 application server.
 
 Usage
 -----
@@ -71,21 +71,21 @@ docker pull frolvlad/alpine-oraclejdk8
 Notes
 -----
 Auto deploy directory:
-/opt/glassfish4/glassfish/domains/domain1/autodeploy
+/opt/glassfish5/glassfish/domains/domain1/autodeploy
 
 Log directory:
-/opt/glassfish4/glassfish/domains/domain1/logs
+/opt/glassfish5/glassfish/domains/domain1/logs
 
 
-docker run -d -v ~/tmp/domains:/opt/glassfish4/glassfish/domains:ro -p 4848:4848 -p 8080:8080 -e GLASSFISH_PASS="mypass" ernyoke/glassfish-5.0.1
+docker run -d -v ~/tmp/domains:/opt/glassfish5/glassfish/domains:ro -p 4848:4848 -p 8080:8080 -e GLASSFISH_PASS="mypass" ernyoke/glassfish-5.0.1
 
-docker run --rm -it -v ~/tmp/glassfish/deploy:/opt/app/deploy:ro -v ~/tmp/glassfish/logs:/opt/glassfish4/glassfish/domains/domain1/logs -p 4848:4848 -p 8080:8080 -p 9009:9009 -e GLASSFISH_PASS="mypass" ernyoke/glassfish-5.0.1 /bin/bash
+docker run --rm -it -v ~/tmp/glassfish/deploy:/opt/app/deploy:ro -v ~/tmp/glassfish/logs:/opt/glassfish5/glassfish/domains/domain1/logs -p 4848:4848 -p 8080:8080 -p 9009:9009 -e GLASSFISH_PASS="mypass" ernyoke/glassfish-5.0.1 /bin/bash
 
-docker run --rm -it -v ~/tmp/glassfish/deploy:/opt/glassfish4/glassfish/domains/domain1/autodeploy -v ~/tmp/glassfish/logs:/opt/glassfish4/glassfish/domains/domain1/logs -p 4848:4848 -p 8080:8080 -p 9009:9009 -e GLASSFISH_PASS="mypass" ernyoke/glassfish-5.0.1 /opt/app/bin/start-glassfish.sh
+docker run --rm -it -v ~/tmp/glassfish/deploy:/opt/glassfish5/glassfish/domains/domain1/autodeploy -v ~/tmp/glassfish/logs:/opt/glassfish5/glassfish/domains/domain1/logs -p 4848:4848 -p 8080:8080 -p 9009:9009 -e GLASSFISH_PASS="mypass" ernyoke/glassfish-5.0.1 /opt/app/bin/start-glassfish.sh
 
-docker run --rm -it -v ~/tmp/glassfish/deploy:/opt/glassfish4/glassfish/domains/domain1/autodeploy -v ~/tmp/glassfish/logs:/opt/glassfish4/glassfish/domains/domain1/logs --net=host -e GLASSFISH_PASS="mypass" ernyoke/glassfish-5.0.1 /opt/app/bin/start-glassfish.sh
+docker run --rm -it -v ~/tmp/glassfish/deploy:/opt/glassfish5/glassfish/domains/domain1/autodeploy -v ~/tmp/glassfish/logs:/opt/glassfish5/glassfish/domains/domain1/logs --net=host -e GLASSFISH_PASS="mypass" ernyoke/glassfish-5.0.1 /opt/app/bin/start-glassfish.sh
 
-docker run --rm -it -v ~/tmp/glassfish/import:/import:ro -v ~/tmp/glassfish/domains:/opt/glassfish4/glassfish/domains -p 4848:4848 -p 8080:8080 -e GLASSFISH_PASS="mypass" ernyoke/glassfish-5.0.1 /bin/bash
+docker run --rm -it -v ~/tmp/glassfish/import:/import:ro -v ~/tmp/glassfish/domains:/opt/glassfish5/glassfish/domains -p 4848:4848 -p 8080:8080 -e GLASSFISH_PASS="mypass" ernyoke/glassfish-5.0.1 /bin/bash
 
 docker run --rm -it -p 4848:4848 -p 8080:8080 -e GLASSFISH_PASS="mypass" ernyoke/glassfish-5.0.1 /bin/bash
 

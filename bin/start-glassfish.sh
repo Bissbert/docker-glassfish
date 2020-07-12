@@ -11,8 +11,8 @@ set -e
 
 #extlib_dir=${root_dir}/extlib
 #if [ "$(ls -A ${extlib_dir})" ]; then
-#    echo "${extlib_dir} is not empty, copy files to /opt/glassfish4/glassfish/lib"
-#    cp ${extlib_dir}/* /opt/glassfish4/glassfish/lib
+#    echo "${extlib_dir} is not empty, copy files to /opt/glassfish5/glassfish/lib"
+#    cp ${extlib_dir}/* /opt/glassfish5/glassfish/lib
 #fi
 
 deploy_dir=${root_dir}/deploy

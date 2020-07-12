@@ -13,7 +13,7 @@ RUN apk add --update bash expect && rm -rf /var/cache/apk/* && \
 
 RUN echo 'root:root' | chpasswd
 
-ENV PATH /opt/glassfish4/bin:/opt/app/bin:$PATH
+ENV PATH /opt/glassfish5/bin:/opt/app/bin:$PATH
 
 ADD bin/change_admin_password.sh /opt/app/bin/change_admin_password.sh
 ADD bin/change_admin_password_func.sh /opt/app/bin/change_admin_password_func.sh
