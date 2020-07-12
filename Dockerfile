@@ -1,8 +1,5 @@
 FROM ernyoke/oracle-java8:latest
 
-# Build image
-# docker build -t koert/glassfish-4.1 .
-
 RUN apt-get update && \
     apt-get install -y wget pwgen expect && \
     apt-get install -y vim && \
@@ -12,6 +9,7 @@ RUN apt-get update && \
     rm glassfish-5.0.1.zip
 
 ENV PATH /opt/glassfish5/bin:/opt/app/bin:$PATH
+ENV GLASSFISH_PASS admin
 
 RUN mkdir -p /opt/app/bin
 RUN mkdir -p /opt/app/deploy
@@ -29,11 +27,6 @@ RUN dos2unix /opt/app/bin/*
 RUN /opt/app/bin/initialize-glassfish.sh
 
 RUN echo 'root:root' | chpasswd
-
-# RUN mkdir /etc/service
-# RUN mkdir /etc/service/glassfish
-# ADD bin/start-glassfish.sh /etc/service/glassfish/run
-# RUN chmod +x /etc/service/glassfish/run
 
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
